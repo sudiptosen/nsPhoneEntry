@@ -1,3 +1,52 @@
-<GridLayout>
-  <page-router-outlet></page-router-outlet>
+<GridLayout rows="*,auto, 60, 50, auto, 60, 50, auto, 60,*" padding="20">
+
+    <Label row="1" text="@nstudio/nativescript-input-mask Fails in (iOS)"
+           textWrap="true"
+           fontSize="18" color="DarkSlateBlue" textAlignment="center" ></Label>
+    <InputMask row="2" mask="(000) [000]-[0000]"
+               keyboardType="number"
+               color="gray"
+               width="80%"
+               borderColor="silver"
+               borderWidth="1"
+               height="60"
+               fontSize="20"
+               textAlignment="center"
+               borderRadius="4"
+               (extractedValueChange)="onExtractedValueChange($event)"
+               (completedChange)="onCompletedChage($event)"> </InputMask>
+
+    <Label row="4" text="Text Change Implementation Repeats Characters (iOS only)" textWrap="true"
+           fontSize="18" color="DarkSlateBlue" textAlignment="center" ></Label>
+    <TextField row="5" hint="XXX-XXX-XXXX"
+               (textChange)="onTextChange($event)"
+               keyboardType="number"
+               color="gray"
+               width="80%"
+               borderColor="silver"
+               borderWidth="1"
+               height="60"
+               fontSize="20"
+               textAlignment="center"
+               borderRadius="4">
+    </TextField>
+
+    <Label row="7" text="iOS issue simplified (just type any single digit)" textWrap="true"
+           fontSize="18" color="DarkSlateBlue" textAlignment="center" ></Label>
+    <TextField row="8"
+               (textChange)="onAppendDash($event)"
+               keyboardType="number"
+               color="gray"
+               width="80%"
+               borderColor="silver"
+               borderWidth="1"
+               height="60"
+               fontSize="20"
+               textAlignment="center"
+               borderRadius="4">
+    </TextField>
+
+
+
+
 </GridLayout>
